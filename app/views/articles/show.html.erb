@@ -1,0 +1,29 @@
+<p style="color: green"><%= notice %></p>
+
+<turbo-frame id="article_<%= @article.id %>_title">
+  <h1><%= @article.title %></h1>
+  <a href="<%= edit_article_path(@article) %>" data-turbo-frame="article_<%= @article.id %>_title">Edit Title</a>
+</turbo-frame>
+
+<p><%= @article.body %></p>
+
+<%# This is the link to open the edit modal (keep if needed) %>
+<%= link_to "Edit Article", edit_article_path(@article), data: { turbo_frame: "modal" } %>
+
+<h2>Comments</h2>
+<div id="comments">
+  <%# You'd render comments here, e.g., @article.comments.each do |comment| %>
+    <%# <%= render 'comments/comment', comment: comment %>
+  <%# end %>
+</div>
+
+<h3>Add a Comment</h3>
+<div id="new_comment_form">
+  <%# You'd render the comment form here, e.g., <%= render 'comments/form', article: @article, comment: @comment %>
+</div>
+
+<div>
+  <%# Default scaffold links. Keep or remove as needed. %>
+  <%= link_to "Back to articles", articles_path %>
+  <%= button_to "Destroy this article", @article, method: :delete %>
+</div>

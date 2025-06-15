@@ -1,0 +1,11 @@
+# app/helpers/application_helper.rb
+module ApplicationHelper
+  def flash_class(type)
+    case type.to_sym
+    when :notice  then "bg-blue-500"
+    when :alert   then "bg-red-500"
+    when :success then "bg-green-500"
+    else "bg-gray-500"
+    end
+  end
+end

@@ -1,0 +1,5 @@
+<%# app/views/articles/_title.html.erb %>
+<%# Expects `local: { article: article }` %>
+
+<h1><%= article.title %></h1>
+<a href="<%= edit_article_path(article) %>" data-turbo-frame="article_<%= article.id %>_title">Edit Title</a>

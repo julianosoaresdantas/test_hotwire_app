@@ -1,0 +1,19 @@
+{
+  "name": "test_hotwire_app",
+  "private": true,
+  "dependencies": {
+    "@hotwired/stimulus": "^3.2.2",
+    "@hotwired/turbo-rails": "^8.0.4"
+   
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.3",
+    "postcss": "^8.4.38",
+    "autoprefixer": "^10.4.19"
+   
+  },
+  "scripts": {
+  "build:css": "npx tailwindcss -i ./app/assets/stylesheets/application.css -o ./app/assets/builds/tailwind.css --minify --watch",
+  "build": "npm run build:css"
+}
+}
