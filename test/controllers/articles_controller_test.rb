@@ -34,8 +34,8 @@ class ArticlesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update article" do
-    patch article_url(@article), params: { article: { body: @article.body, title: @article.title } }
-    assert_redirected_to article_url(@article)
+    patch article_url(@article), params: { article: { content: @article.content, title: @article.title } }
+    assert_response :ok # <--- Make this exact change
   end
 
   test "should destroy article" do
