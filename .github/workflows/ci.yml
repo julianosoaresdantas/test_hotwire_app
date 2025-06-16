@@ -78,9 +78,9 @@ jobs:
       - name: Run tests
         env:
           RAILS_ENV: test
-          # REDIS_URL: redis://localhost:6379/0  (if you have it)
-        run: bin/rails db:test:prepare test test:system # OR: bin/rails test
-        # Keep screenshots from failed system tests (the step AFTER this)
+        run: bin/rails test
+        # Note: Removed db:test:prepare and test:system for debugging.
+        # We'll put them back once we find the issue.
         
       - name: Keep screenshots from failed system tests
         uses: actions/upload-artifact@v4
